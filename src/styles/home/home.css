@@ -1,0 +1,36 @@
+.Home {
+  margin-top: 20vh;
+}
+
+input {
+  width: 200px;
+  padding-left: 7px;
+  height: 25px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 5px;
+  height: 35px;
+  margin: 10px;
+}
+
+.results {
+  max-width: 375px;
+  border: solid 3px black;
+  border-radius: 7px;
+  padding: 15px;
+  margin-top: 25px;
+  display: none;
+  background-color: skyblue;
+}
+
+.results h4 {
+  margin: 3px;
+}
+
+.results p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=home.css.map */
