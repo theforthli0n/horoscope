@@ -1,6 +1,18 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import "../styles/home/home.css";
+import { ReactComponent as Aries } from "../styles/images/signs/aries.svg";
+import { ReactComponent as Aquarius } from "../styles/images/signs/Aquarius.svg";
+import { ReactComponent as Cancer } from "../styles/images/signs/cancer.svg";
+import { ReactComponent as Capricorn } from "../styles/images/signs/capricorn.svg";
+import { ReactComponent as Gemini } from "../styles/images/signs/gemini.svg";
+import { ReactComponent as Leo } from "../styles/images/signs/leo.svg";
+import { ReactComponent as Libra } from "../styles/images/signs/libra.svg";
+import { ReactComponent as Pisces } from "../styles/images/signs/pisces.svg";
+import { ReactComponent as Sagittarius } from "../styles/images/signs/sagittarius.svg";
+import { ReactComponent as Scorpio } from "../styles/images/signs/scorpio.svg";
+import { ReactComponent as Taurus } from "../styles/images/signs/taurus.svg";
+import { ReactComponent as Virgo } from "../styles/images/signs/virgo.svg";
 
 export default function Home() {
   const [dateRange, setDateRange] = useState("");
@@ -45,7 +57,7 @@ export default function Home() {
   const getTodayResult = () => {
     let url =
       "https://aztro.sameerkumar.website/?sign=" +
-      document.querySelector(".input-sign").value +
+      document.querySelector(".input-sign").value.toLowerCase() +
       "&day=today";
     Axios.post(url).then((response) => {
       console.log(response.data);
@@ -74,7 +86,7 @@ export default function Home() {
   const getTomorrowResult = () => {
     let url =
       "https://aztro.sameerkumar.website/?sign=" +
-      document.querySelector(".input-sign").value +
+      document.querySelector(".input-sign").value.toLowerCase() +
       "&day=tomorrow";
     Axios.post(url).then((response) => {
       console.log(response.data);
@@ -102,7 +114,62 @@ export default function Home() {
   };
   return (
     <div className="Home">
-      <h2>What is your birth sign?</h2>
+      <h1 className="header">Daily horoscope</h1>
+      <Virgo
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Virgo";
+          getTodayResult();
+        }}
+      />
+      <Aries
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Aries";
+          getTodayResult();
+        }}
+      />
+      <Taurus
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Taurus";
+          getTodayResult();
+        }}
+      />
+      <Gemini
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Gemini";
+          getTodayResult();
+        }}
+      />
+      <Cancer
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Cancer";
+          getTodayResult();
+        }}
+      />
+      <Leo
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Leo";
+          getTodayResult();
+        }}
+      />
+      <Libra
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Libra";
+          getTodayResult();
+        }}
+      />
+      <Scorpio
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Scorpio";
+          getTodayResult();
+        }}
+      />
+      <Sagittarius
+        onClick={function () {
+          document.querySelector(".input-sign").value = "Sagittarius";
+          getTodayResult();
+        }}
+      />
+      <br />
       <input type="text" placeholder="Birth Sign" className="input-sign" />
       <br />
       <button onClick={getYesterdayResult}>Yesterday's horoscope</button>
@@ -111,16 +178,30 @@ export default function Home() {
 
       <div className="results">
         <h1>
-          {name} range between:
+          {name} are born from:
           <br /> {dateRange}
         </h1>
-        <h4>Today's date: {currentDate}</h4>
-        <h4>Mood: {mood}</h4>
-        <h4>Color: {color}</h4>
-        <h4>Compatibility: {compatibility}</h4>
-        <h4>Lucky Number: {luckyNumber}</h4>
-        <h4>Luck Time: {luckyTime}</h4>
-        <p>{description}</p>
+        <p>
+          {currentDate}: <br /> {description}
+        </p>
+        <h3>
+          <span className="bold">Mood:</span> {mood}
+          <span>
+            <span className="bold">Color:</span> {color}
+          </span>
+        </h3>
+
+        <h3>
+          <span className="bold">Lucky Number:</span> {luckyNumber}
+          <span>
+            <span className="bold">Luck Time:</span> {luckyTime}
+          </span>
+        </h3>
+
+        <h3>
+          <span className="bold">Compatibility: </span>
+          {compatibility}
+        </h3>
       </div>
     </div>
   );

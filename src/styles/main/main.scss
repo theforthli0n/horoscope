@@ -1,3 +1,5 @@
+@import "../variables/Variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=IBM+Plex+Mono&family=Kalam&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -6,5 +8,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #c7d1d9;
+  background-color: rgb(228, 227, 222);
+  color: rgb(44, 50, 59);
+  padding: 0 15px;
+  font-family: "Fredoka", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
+  font-family: "Kalam", cursive;
+  letter-spacing: -1.5px;
+  line-height: 30px;
 }

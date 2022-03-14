@@ -1,27 +1,28 @@
+@import "../variables/Variables.css";
 .Home {
-  margin-top: 20vh;
+  margin-top: 5vh;
 }
 
 input {
   width: 200px;
   padding-left: 7px;
   height: 25px;
+  margin-top: 25px;
 }
 button {
-  margin-top: 25px;
   padding: 5px;
   height: 35px;
-  margin: 10px;
+  margin: 25px 10px;
 }
 .results {
   max-width: 375px;
-  border: solid 3px black;
+  border: solid 3px rgb(44, 50, 59);
   border-radius: 7px;
   padding: 15px;
   margin-top: 25px;
   display: none;
-  background-color: skyblue;
-
+  background-color: #3dd230;
+  margin: 0 auto;
   h4 {
     margin: 3px;
   }
@@ -30,4 +31,28 @@ button {
     font-size: 1.5rem;
     font-weight: bold;
   }
+}
+
+.header {
+  font-size: 4rem !important;
+}
+
+.bold {
+  font-size: 1.5rem;
+}
+span {
+  margin-left: 25px;
+}
+
+// icons
+.iconify {
+  width: 75px;
+  height: 75px;
+  fill: rgb(44, 50, 59);
+  transition: transform 0.2s ease-in-out;
+}
+
+.iconify:hover {
+  fill: #3dd230;
+  transform: rotate(20deg);
 }
