@@ -1,0 +1,12 @@
+services:
+  horoscope-client:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: horoscope-client
+    ports:
+      - "4013:4013"
+    environment:
+      - PORT=4013
+    volumes:
+      - ./:/horoscope-client
